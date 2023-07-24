@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState ,useRef} from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/Actions/userActions";
+import ml5 from 'ml5';
 
 const Header = () => {
 
 
-  const [keyword, setKeyword] = useState();
+  const [keyword, setKeyword] = useState("");
   const dispatch = useDispatch();
   let history = useHistory();
 
@@ -22,11 +23,76 @@ const Header = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      history.push(`/search/${keyword}`);
+      // Check if there's a prediction value and append it to the search URL
+      const searchURL = prediction
+        ? `/search/${keyword}/${prediction}`
+        : `/search/${keyword}`;
+
+      history.push(searchURL);
     } else {
       history.push("/");
     }
   };
+
+  const [prediction, setPrediction] = useState('');
+  const classifierRef = useRef(null);
+  const imageModelURL = '../model/';
+
+  const setupClassifier = async () => {
+    classifierRef.current = await ml5.imageClassifier(imageModelURL + 'model.json');
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file.type.startsWith('image/')) {
+      classifyImage(file);
+    } else {
+      console.error('Invalid file type. Please upload an image file.');
+    }
+  };
+
+  const classifyImage = (file) => {
+    const imageElement = new Image();
+    imageElement.src = URL.createObjectURL(file);
+  
+    // Set width and height for the image
+    imageElement.width = 300; // Set your desired width here
+    imageElement.height = 300; // Set your desired height here
+  
+    classifierRef.current.classify(imageElement, gotResult);
+  };
+
+  const gotResult = (error, results) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+    const predictedLabel = results[0].label;
+    setPrediction(predictedLabel); // Set prediction directly without "Prediction: "
+
+    console.log(predictedLabel);
+
+    // Use the predicted label to navigate to the search results page
+    if (predictedLabel.trim()) {
+      history.push(`/search/${predictedLabel}`);
+    } else {
+      history.push("/");
+    }
+  };
+
+  // Initialize the classifier when the component mounts
+  React.useEffect(() => {
+    setupClassifier();
+  }, []);
+
+  const handleUploadButtonClick = () => {
+    // Trigger the hidden file input when the button is clicked
+    fileInputRef.current.click();
+  };
+
+  const fileInputRef = useRef(null);
+
+
   return (
     <div>
       {/* Top Header */}
@@ -156,6 +222,18 @@ const Header = () => {
                     placeholder="Search"
                     onChange={(e) => setKeyword(e.target.value)}
                   />
+                   <div>
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      style={{ display: 'none' }}
+                      accept="image/*"
+                      onChange={handleFileChange}
+                    />
+                    </div>
+                    <button onClick={handleUploadButtonClick} type="button" className="upload-button">
+                      <i className="fas fa-camera"></i> ຄົ້າຫາດ້ວຍຮູບ
+                    </button>
                   <button type="submit" className="search-button">
                     ຄົ້ນຫາ
                   </button>

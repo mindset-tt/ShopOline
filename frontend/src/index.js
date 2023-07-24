@@ -14,3 +14,16 @@ ReactDOM.render(
   
     document.getElementById("root")
   );
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import ImageClassifier from './App';
+
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <ImageClassifier />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
