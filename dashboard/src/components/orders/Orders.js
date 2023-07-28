@@ -14,9 +14,9 @@ const Orders = (props) => {
           <th scope="col">ຊື່</th>
           <th scope="col">ອີເມວ</th>
           <th scope="col">ລາຄາ</th>
-          <th scope="col">ຊຳລະແລ້ວ</th>
+          <th scope="col">ສະຖານະການຊຳລະເງີນ</th>
           <th scope="col">ວັນທີ່</th>
-          <th>Status</th>
+          <th>ສະຖານະການຈັດສົ່ງ</th>
           <th scope="col" className="text-end">
             ເບີ່ງຂໍ້ມູນ
           </th>
@@ -33,7 +33,7 @@ const Orders = (props) => {
             <td>
               {order.isPaid ? (
                 <span className="badge rounded-pill alert-success">
-                  Paid At {moment(order.paidAt).format("MMM Do YY")}
+                  ຈ່າຍເມື່ອ {moment(order.paidAt).format("MMM Do YY")}
                 </span>
               ) : (
                 <span className="badge rounded-pill alert-danger">

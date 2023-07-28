@@ -6,8 +6,9 @@ import { listProducts } from "../../Redux/Actions/ProductActions";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
 
-const MainProducts = () => {
+const MainProducts = (props) => {
   const dispatch = useDispatch();
+  const { page, pages, keyword = "" } = props;
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
@@ -74,7 +75,6 @@ const MainProducts = () => {
               ))}
             </div>
           )}
-
           <nav className="float-end mt-4" aria-label="Page navigation">
             <ul className="pagination">
               <li className="page-item disabled">

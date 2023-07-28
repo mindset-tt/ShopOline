@@ -1,4 +1,4 @@
-import React, { useState ,useRef} from "react";
+import React, { useState, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/Actions/userActions";
@@ -44,21 +44,22 @@ const Header = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file.type.startsWith('image/')) {
+    if (file && file.type && file.type.startsWith('image/')) {
       classifyImage(file);
     } else {
       console.error('Invalid file type. Please upload an image file.');
     }
   };
 
+
   const classifyImage = (file) => {
     const imageElement = new Image();
     imageElement.src = URL.createObjectURL(file);
-  
+
     // Set width and height for the image
     imageElement.width = 300; // Set your desired width here
     imageElement.height = 300; // Set your desired height here
-  
+
     classifierRef.current.classify(imageElement, gotResult);
   };
 
@@ -222,7 +223,7 @@ const Header = () => {
                     placeholder="Search"
                     onChange={(e) => setKeyword(e.target.value)}
                   />
-                   <div>
+                  <div>
                     <input
                       type="file"
                       ref={fileInputRef}
@@ -230,10 +231,11 @@ const Header = () => {
                       accept="image/*"
                       onChange={handleFileChange}
                     />
-                    </div>
-                    <button onClick={handleUploadButtonClick} type="button" className="upload-button">
-                      <i className="fas fa-camera"></i> ຄົ້າຫາດ້ວຍຮູບ
-                    </button>
+
+                  </div>
+                  <button onClick={handleUploadButtonClick} type="button" className="upload-button">
+                    <i className="fas fa-camera"></i> ຄົ້າຫາດ້ວຍຮູບ
+                  </button>
                   <button type="submit" className="search-button">
                     ຄົ້ນຫາ
                   </button>
@@ -253,7 +255,7 @@ const Header = () => {
                     </button>
                     <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/profile">
-                      ໂປຣໄຟລ໌
+                        ໂປຣໄຟລ໌
                       </Link>
 
                       <Link

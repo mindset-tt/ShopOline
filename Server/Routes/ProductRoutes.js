@@ -128,7 +128,7 @@ productRoute.post(
     const productExist = await Product.findOne({ name });
     if (productExist) {
       res.status(400);
-      throw new Error("Product name already exist");
+      throw new Error("ຊື່ສີນຄ້ານີ້ມີຢູ່ໃນລະບົບແລ້ວ");
     } else {
       const product = new Product({
         name,

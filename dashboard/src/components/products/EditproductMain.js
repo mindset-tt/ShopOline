@@ -79,10 +79,10 @@ const EditProductMain = (props) => {
             <Link to="/products" className="btn btn-danger text-white">
               ກັບໄປທີ່ສິຄ້າ
             </Link>
-            <h2 className="content-title">Update Product</h2>
+            <h2 className="content-title">ໜ້າແກ້ໄຂສີນຄ້າ</h2>
             <div>
               <button type="submit" className="btn btn-primary">
-                ເຜີຍແຜ່
+                ອັບເດດ
               </button>
             </div>
           </div>
@@ -103,11 +103,11 @@ const EditProductMain = (props) => {
                     <>
                       <div className="mb-4">
                         <label htmlFor="product_title" className="form-label">
-                          Product title
+                          ຊື່ສິນຄ້າ
                         </label>
                         <input
                           type="text"
-                          placeholder="Type here"
+                          placeholder="ປ້ອນຊື່ສິນຄ້າ"
                           className="form-control"
                           id="product_title"
                           required
@@ -117,11 +117,11 @@ const EditProductMain = (props) => {
                       </div>
                       <div className="mb-4">
                         <label htmlFor="product_price" className="form-label">
-                          Price
+                          ລາຄາສິນຄ້າ
                         </label>
                         <input
                           type="number"
-                          placeholder="Type here"
+                          placeholder="ປ້ອນລາຄາ"
                           className="form-control"
                           id="product_price"
                           required
@@ -131,11 +131,11 @@ const EditProductMain = (props) => {
                       </div>
                       <div className="mb-4">
                         <label htmlFor="product_price" className="form-label">
-                          Count In Stock
+                          ຈຳນວນສິນຄ້າ
                         </label>
                         <input
                           type="number"
-                          placeholder="Type here"
+                          placeholder="ປ້ອນຈຳນວນສິນຄ້າ"
                           className="form-control"
                           id="product_price"
                           required
@@ -144,9 +144,9 @@ const EditProductMain = (props) => {
                         />
                       </div>
                       <div className="mb-4">
-                        <label className="form-label">Description</label>
+                        <label className="form-label">ລາຍລະອຽດຂອງສີນຄ້າ</label>
                         <textarea
-                          placeholder="Type here"
+                          placeholder="ປ້ອນລາຍລະອຽດຂອງສີນຄ້າ"
                           className="form-control"
                           rows="7"
                           required
@@ -155,7 +155,7 @@ const EditProductMain = (props) => {
                         ></textarea>
                       </div>
                       <div className="mb-4">
-                        <label className="form-label">Images</label>
+                        <label className="form-label">ເພີ່ມຮູບພາບ</label>
                         <input
                           className="form-control"
                           type="text"

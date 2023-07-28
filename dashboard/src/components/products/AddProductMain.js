@@ -51,12 +51,12 @@ const AddProductMain = () => {
         <form onSubmit={submitHandler}>
           <div className="content-header">
             <Link to="/products" className="btn btn-danger text-white">
-              Go to products
+              ກັບໄປທີ່ໜ້າສິນຄ້າ
             </Link>
-            <h2 className="content-title">Add product</h2>
+            <h2 className="content-title">ໜ້າເພີ່ມສີນຄ້າ</h2>
             <div>
               <button type="submit" className="btn btn-primary">
-                Publish now
+                ເພີ່ມສີນຄ້າ
               </button>
             </div>
           </div>
@@ -69,11 +69,11 @@ const AddProductMain = () => {
                   {loading && <Loading />}
                   <div className="mb-4">
                     <label htmlFor="product_title" className="form-label">
-                      Product title
+                     ຊື່ສິນຄ້າ
                     </label>
                     <input
                       type="text"
-                      placeholder="Type here"
+                      placeholder="ປ້ອນຊື່ສີນຄ້າ"
                       className="form-control"
                       id="product_title"
                       required
@@ -83,11 +83,11 @@ const AddProductMain = () => {
                   </div>
                   <div className="mb-4">
                     <label htmlFor="product_price" className="form-label">
-                      Price
+                      ລາຄາສິນຄ້າ
                     </label>
                     <input
                       type="number"
-                      placeholder="Type here"
+                      placeholder="ປ້ອນລາຄາສີນຄ້າ"
                       className="form-control"
                       id="product_price"
                       required
@@ -97,11 +97,11 @@ const AddProductMain = () => {
                   </div>
                   <div className="mb-4">
                     <label htmlFor="product_price" className="form-label">
-                      Count In Stock
+                      ຈຳນວນສິນຄ້າ
                     </label>
                     <input
                       type="number"
-                      placeholder="Type here"
+                      placeholder="ປ້ອນຈຳນວນສິນຄ້າ"
                       className="form-control"
                       id="product_price"
                       required
@@ -110,9 +110,9 @@ const AddProductMain = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="form-label">Description</label>
+                    <label className="form-label">ລາຍລະອຽດຂອງສີນຄ້າ</label>
                     <textarea
-                      placeholder="Type here"
+                      placeholder="ປ້ອນລາຍລະອຽດຂອງສິນຄ້າ"
                       className="form-control"
                       rows="7"
                       required
@@ -121,7 +121,7 @@ const AddProductMain = () => {
                     ></textarea>
                   </div>
                   <div className="mb-4">
-                    <label className="form-label">Images</label>
+                    <label className="form-label">ເພີ່ມຮູບພາບ</label>
                     <input
                       className="form-control"
                       type="text"
