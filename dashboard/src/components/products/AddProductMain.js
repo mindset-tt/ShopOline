@@ -51,7 +51,7 @@ const AddProductMain = () => {
         <form onSubmit={submitHandler}>
           <div className="content-header">
             <Link to="/products" className="btn btn-danger text-white">
-              ກັບໄປທີ່ໜ້າສິນຄ້າ
+              ກັບໄປທີ່ໜ້າຈັດການສີນຄ້າ
             </Link>
             <h2 className="content-title">ໜ້າເພີ່ມສີນຄ້າ</h2>
             <div>
@@ -108,6 +108,7 @@ const AddProductMain = () => {
                       value={countInStock}
                       onChange={(e) => setCountInStock(e.target.value)}
                     />
+                    
                   </div>
                   <div className="mb-4">
                     <label className="form-label">ລາຍລະອຽດຂອງສີນຄ້າ</label>
@@ -124,8 +125,7 @@ const AddProductMain = () => {
                     <label className="form-label">ເພີ່ມຮູບພາບ</label>
                     <input
                       className="form-control"
-                      type="text"
-                      placeholder="Enter Image URL"
+                      
                       value={image}
                       required
                       onChange={(e) => setImage(e.target.value)}

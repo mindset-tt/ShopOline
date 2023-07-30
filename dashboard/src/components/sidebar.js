@@ -60,8 +60,8 @@ const Sidebar = () => {
                 className="menu-link"
                 to="/category"
               >
-                <i className="icon fas fa-list"></i>
-                <span className="text">ໝວດໝູ່ສີນຄ້າ</span>
+               <i className="icon fas fa-list"></i>
+                <span className="text"></span>
               </NavLink>
             </li>
             <li className="menu-item">
@@ -71,7 +71,7 @@ const Sidebar = () => {
                 to="/orders"
               >
                 <i className="icon fas fa-bags-shopping"></i>
-                <span className="text">ການສັ່ງຊື້-ຂາຍ ແລະ ຊຳເງີນ</span>
+                <span className="text">ລາຍງານ</span>
               </NavLink>
             </li>
             <li className="menu-item">
@@ -81,7 +81,7 @@ const Sidebar = () => {
                 to="/users"
               >
                 <i className="icon fas fa-user"></i>
-                <span className="text">ຂໍ້ມູນຜູ້ໃຊ້</span>
+                <span className="text">ລາຍງານ ຂໍ້ມູນຜູ້ໃຊ້</span>
               </NavLink>
             </li>
             <li className="menu-item">
@@ -102,7 +102,7 @@ const Sidebar = () => {
                 to="/transaction"
               >
                 <i className="icon fas fa-usd-circle"></i>
-                <span className="text">Transactions</span>
+                <span className="text"></span>
               </NavLink>
             </li>
           </ul>

@@ -24,7 +24,7 @@ const EditProductMain = (props) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
-  const [countInStock, setCountInStock] = useState(0);
+  const [countInStock, setCountInStock, ] = useState(0);
   const [description, setDescription] = useState("");
 
   const dispatch = useDispatch();
@@ -142,6 +142,7 @@ const EditProductMain = (props) => {
                           value={countInStock}
                           onChange={(e) => setCountInStock(e.target.value)}
                         />
+                        
                       </div>
                       <div className="mb-4">
                         <label className="form-label">ລາຍລະອຽດຂອງສີນຄ້າ</label>

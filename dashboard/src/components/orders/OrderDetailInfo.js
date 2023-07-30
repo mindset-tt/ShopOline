@@ -11,7 +11,7 @@ const OrderDetailInfo = (props) => {
             <i className="text-success fas fa-user"></i>
           </span>
           <div className="text">
-            <h6 className="mb-1">ລູກຄ້າ</h6>
+            <h6 className="mb-1">ຂໍ້ມູນລູກຄ້າ</h6>
             <p className="mb-1">
               {order.user.name} <br />
               <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
@@ -27,7 +27,7 @@ const OrderDetailInfo = (props) => {
           <div className="text">
             <h6 className="mb-1">ຂໍ້ມູນການສັ່ງຊື້</h6>
             <p className="mb-1">
-              ການຈັດສົ່ງ: {order.shippingAddress.shipping} <br /> Pay method:{" "}
+              ຂໍ້ມູນການຈັດສົ່ງ: {order.shippingAddress.shipping} <br /> Pay method:{" "}
               {order.paymentMethod}
             </p>
           </div>
@@ -39,7 +39,7 @@ const OrderDetailInfo = (props) => {
             <i className="text-success fas fa-map-marker-alt"></i>
           </span>
           <div className="text">
-            <h6 className="mb-1">ສົ່ງເຖີງ</h6>
+            <h6 className="mb-1">ຂໍ້ມູນທີ່ຢູ່ໃນການຈັດສົ່ງ</h6>
             <p className="mb-1">
               ທີ່ຢູ່: {order.shippingAddress.address}
               <br />

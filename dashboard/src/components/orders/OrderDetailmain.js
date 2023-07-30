@@ -97,7 +97,7 @@ const OrderDetailmain = (props) => {
                         onClick={deliverHandler}
                         className="btn btn-dark col-12"
                       >
-                        MARK ເຄື່ອງໝາຍຈັດສົ່ງແລ້ວ
+                        ຈັດສົ່ງແລ້ວສີນຄ້າ
                       </button>
                     </>
                   )}
