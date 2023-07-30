@@ -73,7 +73,7 @@ const user = await User.create({
 // PROFILE
 userRouter.get(
   "/profile", 
-   protect,
+  //  protect,
    asyncHandler(async (req, res) => {
    const user = await User.findById(req.user._id);
 
@@ -96,7 +96,7 @@ userRouter.get(
 // UPDATE PROFILE
 userRouter.put(
   "/profile",
-  protect,
+  // protect,
   asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
 
@@ -127,7 +127,7 @@ userRouter.put(
 // GET  ALL USER ADMIN
 userRouter.get(
   "/",
-  protect,
+  // protect,
   admin,
   asyncHandler(async (req, res) => {
     const users = await User.find({});

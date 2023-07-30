@@ -29,4 +29,4 @@ app.use(errorHandler);
 
 
 const PORT = process.env.PORT || 1000;
-app.listen(PORT, console.log(`server run in port ${PORT}`));
+app.listen(PORT, '127.0.0.1', console.log(`server run in port ${PORT}`));
